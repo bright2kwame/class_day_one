@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                         JsonArray jsonArray = result.getResult();
                         jsonArray.forEach(item -> {
                             JsonObject jsonObject = item.getAsJsonObject();
-                            CoinItem coinItem = new CoinItem().JsonToCoin(jsonObject);
+                            CoinItem coinItem = new CoinItem(jsonObject);
 
                         });
                     }

@@ -11,20 +11,7 @@ public class CoinItem {
     boolean isActive;
     String type;
 
-    public CoinItem(String id, String name, String symbol, int rank, boolean isNew, boolean isActive, String type) {
-        this.id = id;
-        this.name = name;
-        this.symbol = symbol;
-        this.rank = rank;
-        this.isNew = isNew;
-        this.isActive = isActive;
-        this.type = type;
-    }
-
-    public CoinItem() {
-    }
-
-    public CoinItem JsonToCoin(JsonObject jsonObject) {
+    public CoinItem(JsonObject jsonObject) {
         this.id = jsonObject.get("id").getAsString();
         this.name = jsonObject.get("name").getAsString();
         this.symbol = jsonObject.get("symbol").getAsString();
@@ -32,6 +19,5 @@ public class CoinItem {
         this.isNew = jsonObject.get("is_new").getAsBoolean();
         this.isActive = jsonObject.get("is_active").getAsBoolean();
         this.type = jsonObject.get("type").getAsString();
-        return this;
     }
 }
